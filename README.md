@@ -10,8 +10,9 @@ Installation
 >     $ git clone https://github.com/damianff/shopping-cart-rest-api.git
 >     $ cd shopping-cart
 >     $ composer install --no-interaction
->     $ php bin/console help doctrine:database:create
->     $ php bin/console help doctrine:schema:update --force
+>     $ php bin/console doctrine:database:create
+>     $ php bin/console doctrine:schema:update --force
+>     $ php bin/console faker:populate
 
 Documentation
 -------------
