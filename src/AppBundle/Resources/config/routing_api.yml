@@ -1,0 +1,12 @@
+order:
+    type: rest
+    resource: AppBundle\Controller\Api\OrderController   
+
+order_items:
+    type: rest
+    parent: order
+    resource: AppBundle\Controller\Api\LineItemController
+
+item:
+    type: rest
+    resource: AppBundle\Controller\Api\ItemController
