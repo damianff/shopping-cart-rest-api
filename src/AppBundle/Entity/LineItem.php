@@ -36,11 +36,10 @@ class LineItem implements \JsonSerializable
     /**
      * @var Item
      *
-     * @ORM\ManyToOne(targetEntity="Item")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="item", referencedColumnName="id")
-     * })    
-     */
+     * @ORM\ManyToOne(targetEntity="Item", inversedBy="linesItem", cascade={"persist"})
+     * @ORM\JoinColumn(name="item", referencedColumnName="id", nullable=false)    
+     * @JMSSerializer\Expose           
+     */    
     private $item;
 
     /**
