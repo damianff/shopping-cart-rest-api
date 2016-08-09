@@ -62,6 +62,7 @@ class LineItemController extends AbstractController
         }
 
         try {
+
             $manager = $this->getDoctrine()->getManager();
 
             $order->setTotal($order->getTotal() + ($lineItem->getQuantity() * $lineItem->getPrice()));
@@ -96,10 +97,10 @@ class LineItemController extends AbstractController
      * )
      *
      * @param int $id Unique identifier of an Item from the Order
-     *
+     * @param Order $order Order for the new Item 
      * @return object
      */
-    public function deleteAction($id)
+    public function deleteAction(Order $order, $id)
     {
         return $this->deleteEntity($id);
     } 

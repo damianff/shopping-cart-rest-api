@@ -38,6 +38,10 @@ class Item implements \JsonSerializable
      */
     private $price;     
 
+   /**
+     * @ORM\OneToMany(targetEntity="LineItem", mappedBy="item")
+     */
+    protected $linesItem;
 
     /**
      * @return int
@@ -102,7 +106,12 @@ class Item implements \JsonSerializable
         $this->price = $price;
 
         return $this;
-    }    
+    }  
+
+    public function __toString()
+    {
+        return $this->name;
+    }      
 
     /**
      * @return mixed
